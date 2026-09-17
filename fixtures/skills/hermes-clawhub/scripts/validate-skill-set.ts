@@ -115,6 +115,12 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 function looksLikeSecretValue(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol === "http:" || url.protocol === "https:") return false;
+  } catch {
+    // Non-URLs still go through the secret heuristics below.
+  }
   return (
     value.includes("=") ||
     /^(sk|rk|pk|ghp|gho|glpat|xox[baprs]|clh)[-_]/i.test(value) ||
