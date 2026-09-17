@@ -75,22 +75,22 @@ Base path: `${N8N_BASE_URL}/rest/projects/${N8N_PROJECT_ID}/agent-fleets`
 Send `X-N8N-API-KEY: ${N8N_API_KEY}`. Expand the env var in the shell. Do
 not paste the key into argv.
 
-| Method | Path | Job |
-| --- | --- | --- |
-| `POST` | `/` | Create a fleet (exactly one coordinator) |
-| `GET` | `/` | List fleets in the project |
-| `GET` | `/:fleetId` | Read one fleet |
-| `DELETE` | `/:fleetId` | Delete one fleet |
-| `POST` | `/:fleetId/members` | Add a member |
-| `PATCH` | `/:fleetId/members/:agentId` | Update a member |
-| `POST` | `/:fleetId/runs` | Start a task graph |
-| `GET` | `/:fleetId/runs/:runId` | Read a run |
-| `POST` | `/:fleetId/runs/:runId/cancel` | Cancel a run |
-| `GET` | `/:fleetId/runs/:runId/messages` | List typed messages |
-| `POST` | `/:fleetId/runs/:runId/messages` | Send a typed message |
-| `POST` | `/:fleetId/feedback` | Record `up` / `down` |
-| `GET` | `/:fleetId/specialization/:agentId` | Read a specialization proposal |
-| `POST` | `/:fleetId/specialization` | Apply a specialization to the member spec |
+| Method   | Path                                | Job                                       |
+| -------- | ----------------------------------- | ----------------------------------------- |
+| `POST`   | `/`                                 | Create a fleet (exactly one coordinator)  |
+| `GET`    | `/`                                 | List fleets in the project                |
+| `GET`    | `/:fleetId`                         | Read one fleet                            |
+| `DELETE` | `/:fleetId`                         | Delete one fleet                          |
+| `POST`   | `/:fleetId/members`                 | Add a member                              |
+| `PATCH`  | `/:fleetId/members/:agentId`        | Update a member                           |
+| `POST`   | `/:fleetId/runs`                    | Start a task graph                        |
+| `GET`    | `/:fleetId/runs/:runId`             | Read a run                                |
+| `POST`   | `/:fleetId/runs/:runId/cancel`      | Cancel a run                              |
+| `GET`    | `/:fleetId/runs/:runId/messages`    | List typed messages                       |
+| `POST`   | `/:fleetId/runs/:runId/messages`    | Send a typed message                      |
+| `POST`   | `/:fleetId/feedback`                | Record `up` / `down`                      |
+| `GET`    | `/:fleetId/specialization/:agentId` | Read a specialization proposal            |
+| `POST`   | `/:fleetId/specialization`          | Apply a specialization to the member spec |
 
 Graph node kinds: `coordinator`, `task`, `fan-out`, `fan-in`.
 Message types: `task.assign`, `task.result`, `task.fail`, `task.cancel`,
@@ -117,13 +117,13 @@ hermes fleet serve --host 127.0.0.1 --port 8755
 bun fixtures/skills/hermes-clawhub/scripts/validate-skill-set.ts --print-request hermes-start
 ```
 
-| Method | Path | Success |
-| --- | --- | --- |
-| `GET` | `/health` | `200` (no auth) |
-| `POST` | `/fleet/start` | `201` |
-| `GET` | `/fleet/{id}` | `200` |
-| `POST` | `/fleet/{id}/scale` | `200` |
-| `POST` | `/fleet/{id}/stop` | `200` |
+| Method | Path                | Success         |
+| ------ | ------------------- | --------------- |
+| `GET`  | `/health`           | `200` (no auth) |
+| `POST` | `/fleet/start`      | `201`           |
+| `GET`  | `/fleet/{id}`       | `200`           |
+| `POST` | `/fleet/{id}/scale` | `200`           |
+| `POST` | `/fleet/{id}/stop`  | `200`           |
 
 v1 invariants from hermes-agent: `max_concurrency` ≤ 5, loopback callback
 and bind, `secrets_ref` names only, `kill_switch=true` refuses start and

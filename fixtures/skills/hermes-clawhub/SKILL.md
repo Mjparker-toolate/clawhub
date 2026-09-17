@@ -27,13 +27,13 @@ Publish each child folder as its own listing, or dry-run the parent folder as
 the set index. The repo-root `skills/` directory is the CLI install workdir
 and is gitignored, so the tracked source lives here:
 
-| Skill | Folder | Job |
-| --- | --- | --- |
-| `clawhub-search` | `clawhub-search/` | Search and inspect ClawHub listings |
-| `clawhub-install` | `clawhub-install/` | Install only after inspect |
-| `clawhub-run` | `clawhub-run/` | Run an already-installed skill on demand |
-| `hermes-learn` | `hermes-learn/` | Record what worked; do not install or run |
-| `fleet-delegate` | `fleet-delegate/` | Call n8n REST agent-fleets, optional Hermes webhook |
+| Skill             | Folder             | Job                                                 |
+| ----------------- | ------------------ | --------------------------------------------------- |
+| `clawhub-search`  | `clawhub-search/`  | Search and inspect ClawHub listings                 |
+| `clawhub-install` | `clawhub-install/` | Install only after inspect                          |
+| `clawhub-run`     | `clawhub-run/`     | Run an already-installed skill on demand            |
+| `hermes-learn`    | `hermes-learn/`    | Record what worked; do not install or run           |
+| `fleet-delegate`  | `fleet-delegate/`  | Call n8n REST agent-fleets, optional Hermes webhook |
 
 ## Safety protocol
 
