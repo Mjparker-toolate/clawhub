@@ -1,0 +1,12 @@
+# Example Hermes fleet manifest.
+# Names in secrets_ref are env var names only. Never put secret values here.
+fleet_id: example-local-fleet
+max_concurrency: 5
+worker_template:
+  runtime: hermes
+  role: openclaw-worker
+  command: hermes worker run
+webhook_callback_url: https://operator.example.invalid/hooks/hermes-fleet
+secrets_ref:
+  - HERMES_API_KEY
+  - OPERATOR_WEBHOOK_SECRET

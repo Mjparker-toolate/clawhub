@@ -99,6 +99,21 @@ clawhub list
 Those commands install skills into `./skills` under the current working directory
 and record installed versions in `.clawhub/lock.json`.
 
+## Product boundary
+
+ClawHub is the public registry and trust layer. It stores versioned skills and
+plugins, publisher identity, scan evidence, and install resolution.
+
+OpenClaw and Hermes own runtime execution. ClawHub does not start workers, host
+fleet control planes, or store model-provider keys, channel credentials, or
+local runtime secrets. Packaged skills such as
+[Hermes fleet orchestration](./hermes-fleet.md) may document those operator
+contracts and ship a local `fleet.yaml` check. Calling start, status, scale, or
+stop still happens on the hermes-agent fleet webhook, not on ClawHub.
+
+The same split is written in the repository
+[`VISION.md`](https://github.com/openclaw/clawhub/blob/main/VISION.md).
+
 ## Publishing
 
 Publish skills from a local folder containing `SKILL.md`:
