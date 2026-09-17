@@ -1,0 +1,23 @@
+{
+  "name": "example-local-fleet",
+  "description": "One coordinator and one specialist. Agents must already exist in the n8n project.",
+  "coordinatorAgentId": "coord-1",
+  "members": [
+    {
+      "agentId": "coord-1",
+      "role": "coordinator",
+      "specialization": "Split and join work",
+      "tools": [],
+      "memoryScope": "none",
+      "lifecycle": "active"
+    },
+    {
+      "agentId": "spec-1",
+      "role": "specialist",
+      "specialization": "Search tickets",
+      "tools": ["clawhub:clawhub-search"],
+      "memoryScope": "observational",
+      "lifecycle": "active"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "fleet_id": "example-local-fleet",
+  "max_concurrency": 5,
+  "replicas": 1,
+  "kill_switch": false,
+  "worker_template": {
+    "runtime": "hermes",
+    "role": "leaf",
+    "tools": ["terminal", "file"]
+  },
+  "webhook_callback_url": "http://127.0.0.1:5678/webhook/hermes-fleet",
+  "secrets_ref": ["OPENROUTER_API_KEY", "FLEET_HTTP_TOKEN"]
+}

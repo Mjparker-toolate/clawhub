@@ -104,12 +104,13 @@ and record installed versions in `.clawhub/lock.json`.
 ClawHub is the public registry and trust layer. It stores versioned skills and
 plugins, publisher identity, scan evidence, and install resolution.
 
-OpenClaw and Hermes own runtime execution. ClawHub does not start workers, host
-fleet control planes, or store model-provider keys, channel credentials, or
-local runtime secrets. Packaged skills such as
-[Hermes fleet orchestration](./hermes-fleet.md) may document those operator
-contracts and ship a local `fleet.yaml` check. Calling start, status, scale, or
-stop still happens on the hermes-agent fleet webhook, not on ClawHub.
+OpenClaw and Hermes own runtime execution. n8n owns the opt-in `agent-fleets`
+protocol. ClawHub does not start workers, host fleet control planes, or store
+model-provider keys, channel credentials, or local runtime secrets. Packaged
+skills such as the [Hermes-ClawHub skill set](./hermes-clawhub.md) may document
+those operator contracts and ship a local example check. Fleet create/run
+calls still happen on n8n REST, not on ClawHub. An optional Hermes webhook
+may keep a capped local session pool.
 
 The same split is written in the repository
 [`VISION.md`](https://github.com/openclaw/clawhub/blob/main/VISION.md).

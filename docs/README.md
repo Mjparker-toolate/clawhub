@@ -28,7 +28,7 @@ Reading order:
 4. `docs/publishing.md`: owner-scoped skill/plugin publishing flow.
 5. `docs/cli.md`: ClawHub CLI reference.
 6. `docs/skill-format.md`: skill bundle metadata and package shape.
-7. `docs/hermes-fleet.md`: Hermes fleet skill fixture, fleet.yaml, and registry versus runtime.
+7. `docs/hermes-clawhub.md`: Hermes-ClawHub skill set, n8n agent-fleets, and registry versus runtime.
 8. `docs/claws.md`: experimental Claw package authoring and publication.
 9. `docs/auth.md`: GitHub OAuth, API tokens, and CLI login.
 10. `docs/telemetry.md`: install telemetry and how to opt out.

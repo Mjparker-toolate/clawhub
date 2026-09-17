@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "split",
+      "agentId": "coord-1",
+      "kind": "fan-out",
+      "instruction": "Split tickets after ClawHub inspect",
+      "dependsOn": []
+    },
+    {
+      "id": "search",
+      "agentId": "spec-1",
+      "kind": "task",
+      "instruction": "Search and inspect the listing. Do not install.",
+      "dependsOn": ["split"]
+    },
+    {
+      "id": "join",
+      "agentId": "coord-1",
+      "kind": "fan-in",
+      "instruction": "Merge inspect notes",
+      "dependsOn": ["search"]
+    }
+  ]
+}
