@@ -34,7 +34,11 @@ description, requirements, environment variables, and metadata. Accurate
 metadata matters because it helps users decide whether to install the skill and
 helps automated scans detect mismatches between declared and observed behavior.
 
-See [Skill format](./skill-format.md).
+See [Skill format](./skill-format.md). ClawHub distributes those bundles;
+OpenClaw and Hermes execute them. The [Hermes-ClawHub](./hermes-clawhub.md)
+skill set is one example: it packages search, inspect, install, run, learn,
+and fleet-delegate. Fleet calls go to n8n REST `agent-fleets`, with an
+optional Hermes webhook.
 
 ## Plugins
 
